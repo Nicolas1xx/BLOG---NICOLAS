@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/favicon.ico">
+    
+</head>
+<body>
+    <header>
+        <h1>Blog do Nicolas</h1>
+    </header>
+    <main>
+        {% block conteudo %}
+          <div class="posts-container">
+            {% for post in posts %}
+              <div class="post-container">
+                <button class="post-editar">Editar</button>
+                <button class="post-apagar">Excluir</button>
+
+                <div class="post-autor">
+                  {{ post.autor }}
+                </div>
+
+                <div class="post-conteudo">
+                  {{ post.conteudo }}
+                </div>
+
+                <div class="post-data">
+                  {{ post.data }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© Blog Nicolas - 2024</p>
+    </footer>
+</body>
+</html>
